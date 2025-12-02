@@ -26,7 +26,7 @@ export default function Home() {
         <h1 className="font-headline text-[21px] md:text-4xl font-bold text-center text-foreground leading-tight mb-3">
           A Receita de "Panetone Trufado no Pote" que está fazendo donas de casa faturarem de R$ 150 a R$ 400 por dia neste fim de ano
         </h1>
-        <p className="text-center text-base text-gray-600 mb-4">
+        <p className="text-center text-base md:text-lg text-gray-600 mb-4">
           Veja o passo a passo de como essa simples adaptação na receita tradicional virou uma febre de vendas e como você pode copiar essa técnica na sua cozinha ainda hoje.
         </p>
 
@@ -39,7 +39,7 @@ export default function Home() {
                 <Star className="w-4 h-4" fill="currentColor" />
             </div>
             <span className="font-bold">4.9/5</span>
-            <span>(12.403 votos)</span>
+            <span className="hidden sm:inline">(12.403 votos)</span>
             <span className="text-gray-400 hidden sm:inline">•</span>
             <div className="flex items-center gap-2">
                 <Avatar className="w-6 h-6">
