@@ -29,25 +29,25 @@ const Header = () => {
         <div className="flex items-center justify-between h-24">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Abrir Menu" className="lg:hidden text-gray-600">
+              <div role="button" aria-label="Abrir Menu" className="lg:hidden text-gray-600 cursor-pointer">
                 <Menu className="h-6 w-6" />
-              </Button>
+              </div>
             </SheetTrigger>
             <SheetContent side="left" className="bg-white text-gray-800 w-[280px]">
               <nav className="flex flex-col gap-6 mt-8 text-lg p-4">
-                <a href="#" className="hover:text-primary transition-colors font-semibold">
+                <span className="hover:text-primary transition-colors font-semibold cursor-pointer">
                   Cadastre-se
-                </a>
-                <a href="#" className="hover:text-primary transition-colors font-semibold">
+                </span>
+                <span className="hover:text-primary transition-colors font-semibold cursor-pointer">
                   Login
-                </a>
+                </span>
               </nav>
             </SheetContent>
           </Sheet>
 
           <div className="flex-1 flex justify-center lg:flex-none">
             <Image
-              src="https://i.postimg.cc/KcBgNVxb/TDG-LOGO-FINAL-tdg-logo-principal-colorido-1-300x300.png"
+              src="https://i.postimg.cc/k48zD98V/Design-sem-nome-(5).png"
               alt="TudoGostoso Logo"
               width={200}
               height={50}
@@ -62,20 +62,19 @@ const Header = () => {
                 placeholder="Procure uma receita, um ingrediente..."
                 className="bg-white border-2 border-orange-200 rounded-full pl-4 pr-24 h-12 w-full focus:ring-primary focus:border-primary"
               />
-              <Button
-                type="submit"
-                className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary text-white rounded-full h-10 px-6"
+              <div
+                className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary text-white rounded-full h-10 px-6 flex items-center justify-center cursor-pointer"
               >
                 Procurar
-              </Button>
+              </div>
             </div>
           </div>
           
           <div className="flex items-center justify-end flex-1 lg:flex-none">
              <div className="flex items-center">
-                <Button variant="ghost" size="icon" aria-label="Search" className="lg:hidden text-gray-600">
+                <div role="button" aria-label="Search" className="lg:hidden text-gray-600 cursor-pointer">
                     <Search className="h-6 w-6" />
-                </Button>
+                </div>
                 <UserCircle className="h-8 w-8 text-gray-400 ml-4 hidden lg:block" />
             </div>
           </div>
@@ -87,7 +86,7 @@ const Header = () => {
             <li key={index}>
               <span
                 className={`text-xs font-bold uppercase cursor-pointer ${
-                  item.highlight ? 'text-red-600' : 'text-gray-600'
+                  item.highlight ? 'text-primary' : 'text-gray-600'
                 }`}
               >
                 {item.name}
