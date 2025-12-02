@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "ana-silva-avatar",
+      "description": "Avatar for Ana Silva",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NDcwNjIzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "carlos-pereira-avatar",
+      "description": "Avatar for Carlos Pereira",
+      "imageUrl": "https://images.unsplash.com/photo-1624395213043-fa2e123b2656?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjQ2Njg4OTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "juliana-costa-avatar",
+      "description": "Avatar for Juliana Costa",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1559855603-ce4c8f480d76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzY0NzA1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman smiling"
+    },
+    {
+      "id": "ricardo-mendes-avatar",
+      "description": "Avatar for Ricardo Mendes",
+      "imageUrl": "https://images.unsplash.com/photo-1604551969716-5d6d8f77b241?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBjaGVmfGVufDB8fHx8MTc2NDYxMzY4OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man chef"
+    },
+    {
+      "id": "author-maria-avatar",
+      "description": "Avatar for author Maria da Paz",
+      "imageUrl": "https://images.unsplash.com/photo-1653552900145-5679d740bbb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21hbiUyMGJha2VyfGVufDB8fHx8MTc2NDYyNjQyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman baker"
+    }
+  ]
 }
