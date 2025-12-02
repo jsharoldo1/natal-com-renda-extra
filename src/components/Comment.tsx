@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ThumbsUp } from "lucide-react";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
@@ -15,16 +15,34 @@ type CommentProps = {
 };
 
 const Comment = ({ author, avatarUrl, avatarHint, text, time, initialLikes }: CommentProps) => {
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState<boolean | null>(null);
   const [likes, setLikes] = useState(initialLikes);
+  const [dislikes, setDislikes] = useState(0);
 
   const handleLike = () => {
-    if (liked) {
+    if (liked === true) {
       setLikes(likes - 1);
+      setLiked(null);
     } else {
       setLikes(likes + 1);
+      if (liked === false) {
+        setDislikes(dislikes - 1);
+      }
+      setLiked(true);
     }
-    setLiked(!liked);
+  };
+
+  const handleDislike = () => {
+    if (liked === false) {
+      setDislikes(dislikes - 1);
+      setLiked(null);
+    } else {
+      setDislikes(dislikes + 1);
+      if (liked === true) {
+        setLikes(likes - 1);
+      }
+      setLiked(false);
+    }
   };
 
   const getInitials = (name: string) => {
@@ -37,31 +55,26 @@ const Comment = ({ author, avatarUrl, avatarHint, text, time, initialLikes }: Co
 
   return (
     <div className="flex items-start gap-3 sm:gap-4">
-      <Avatar className="w-10 h-10 border">
-        <AvatarImage src={avatarUrl} alt={author} data-ai-hint={avatarHint} />
-        <AvatarFallback>{getInitials(author)}</AvatarFallback>
+      <Avatar className="w-10 h-10 border rounded-full bg-gray-200">
+        <AvatarImage src={avatarUrl} alt={author} data-ai-hint={avatarHint} className="rounded-full" />
+        <AvatarFallback className="bg-primary/20 text-primary font-bold">{getInitials(author)}</AvatarFallback>
       </Avatar>
       <div className="flex-1">
-        <div className="bg-gray-100 p-3 rounded-xl">
+        <div className="bg-transparent p-0">
           <p className="font-semibold text-gray-800 text-sm">{author}</p>
-          <p className="text-sm text-gray-700">{text}</p>
+          <p className="text-sm text-gray-700 mt-1">{text}</p>
         </div>
-        <div className="flex items-center gap-2 text-xs text-gray-500 mt-1 px-2">
-          <button onClick={handleLike} className={cn("font-semibold hover:underline", liked && "text-blue-600")}>
-            Curtir
+        <div className="flex items-center gap-2 text-xs text-gray-500 mt-2">
+           <button onClick={handleLike} className="flex items-center gap-1.5 text-gray-500 hover:text-primary">
+              <ThumbsUp className={cn("w-4 h-4", liked === true && "text-primary")} />
+              <span className="font-medium">{likes}</span>
           </button>
-          <span>·</span>
+          <button onClick={handleDislike} className="flex items-center gap-1.5 text-gray-500 hover:text-red-500">
+              <ThumbsDown className={cn("w-4 h-4", liked === false && "text-red-500")} />
+              <span className="font-medium">{dislikes}</span>
+          </button>
+          <span className="mx-1">·</span>
           <button className="font-semibold hover:underline">Responder</button>
-          <div className="ml-auto flex items-center gap-1.5">
-            {likes > 0 && (
-                <>
-                    <ThumbsUp className={cn("w-4 h-4", liked ? "text-blue-600" : "text-gray-500")} />
-                    <span className="font-medium">{likes}</span>
-                    <span className="mx-1">·</span>
-                </>
-            )}
-            <span>{time}</span>
-          </div>
         </div>
       </div>
     </div>

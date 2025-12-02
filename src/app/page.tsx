@@ -6,10 +6,13 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Star } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 
 export default function Home() {
 
   const logosImage = PlaceHolderImages.find(p => p.id === 'logos');
+  const anaConfeiteiraAvatar = PlaceHolderImages.find(p => p.id === 'ana-confeiteira-avatar');
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -38,7 +41,13 @@ export default function Home() {
             <span className="font-bold">4.9/5</span>
             <span>(12.403 votos)</span>
             <span className="text-gray-400">•</span>
-            <span>Por <strong>Ana Confeiteira</strong></span>
+            <div className="flex items-center gap-2">
+                <Avatar className="w-8 h-8">
+                    <AvatarImage src={anaConfeiteiraAvatar?.imageUrl} alt="Ana Confeiteira" />
+                    <AvatarFallback>AC</AvatarFallback>
+                </Avatar>
+                <span>Por <strong>Ana Confeiteira</strong></span>
+            </div>
         </div>
         
         <VslPlayer />

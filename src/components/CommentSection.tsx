@@ -4,74 +4,41 @@ import Comment from "./Comment";
 const comments = [
   {
     id: 1,
-    author: "Michael Turner",
-    avatarId: "michael-turner-avatar",
-    text: "I always thought the 'law of attraction' was nonsense, but I was so desperate with debt that I decided to give it a try. Two days after hearing this chant, an old client who hadn't called me in years closed a $48,000 contract. I can't explain it, I just know it works. Thank you, Daniel.",
+    author: "MariaDosBolos",
+    avatarId: "maria-dos-bolos-avatar",
+    text: "Gente, eu achava que era difícil, mas segui o passo a passo do vídeo e vendi 10 unidades só hoje de manhã no grupo do condomínio! O Natal tá salvo!",
     time: "5m",
     likes: 12,
   },
   {
     id: 2,
-    author: "Jennifer Adams",
-    avatarId: "jennifer-adams-avatar",
-    text: "I came here for the money, but what happened was an even bigger miracle. My severe arthritis in my knees, which had tormented me for 6 years, simply disappeared. For the first time in years, I walked up the stairs without pain. It seems this frequency heals the body and soul.",
+    author: "ChefCarla",
+    avatarId: "chef-carla-avatar",
+    text: "Já trabalho com confeitaria há 5 anos e nunca tinha visto essa técnica de precificação que ele ensina. Só com a dica da embalagem eu já paguei o curso.",
     time: "15m",
     likes: 28,
   },
   {
     id: 3,
-    author: "Linda Roberts",
-    avatarId: "linda-roberts-avatar",
-    text: "Folks, this is real. My boss was going to fire me. The same week I started listening to the 60-word chant, the company received an unexpected investment. Instead of being fired, I was promoted with a raise! My faith has been restored.",
+    author: "JaqueViana",
+    avatarId: "jaque-viana-avatar",
+    text: "Fiz ontem pra testar. O cheiro invadiu a casa e o vizinho veio comprar antes de eu oferecer kkkk. Muito bom!",
     time: "30m",
     likes: 41,
-  },
-  {
-    id: 4,
-    author: "David Johnson",
-    avatarId: "david-johnson-avatar",
-    text: "I was the biggest skeptic. Pure coincidence, I thought. Three days of listening to this, I met an investor at the airport by chance. He worked in my field and we closed a project that changed my life. I don't believe in coincidences anymore. There is something powerful here.",
-    time: "1h",
-    likes: 19,
-  },
-  {
-    id: 5,
-    author: "Maria S.",
-    avatarId: "maria-s-avatar",
-    text: "We were about to lose our house. Daniel's story in the presentation sounded like ours. We decided to take a chance. A month later, my husband received a tax refund we didn't even know existed, and it covered all our overdue debts. We are crying with relief. Don't ignore this message, it is an answer to your prayers.",
-    time: "2h",
-    likes: 56,
-  },
-    {
-    id: 6,
-    author: "Margy Peet",
-    avatarId: "margy-peet-avatar",
-    text: "I thought this was a scam, but it actually made my outlook on life so much better? Incredible, thank you my Jesus!!!",
-    time: "47m",
-    likes: 9,
-  },
-  {
-    id: 7,
-    author: "Michael Miller",
-    avatarId: "michael-miller-avatar",
-    text: "I tried this 'chanting' trick everyone is talking about, and it's working for my mom's finances! I'm going to recommend it to all my friends and family.",
-    time: "1h",
-    likes: 10,
-  },
-  {
-    id: 8,
-    author: "Jen McConnell",
-    avatarId: "jen-mcconnell-avatar",
-    text: "@LisaKernan, this is what I was telling you about, it worked for my dad. He seems so much happier and opportunities are just flowing to him.",
-    time: "1h",
-    likes: 4,
   }
 ];
 
 const CommentSection = () => {
   return (
-    <div className="mt-8 bg-white p-6 rounded-lg">
-        <div className="text-sm text-gray-600 mb-4 font-semibold">Mostrando 8 de 552 comentários</div>
+    <div className="mt-12 border-t pt-8">
+        <h2 className="text-xl font-bold mb-4">Comentários</h2>
+        <div className="flex justify-between items-center mb-6 border-b pb-2">
+            <p className="text-gray-600 text-sm">213 comentários</p>
+            <div className="flex gap-4 text-sm">
+                <button className="font-bold text-primary border-b-2 border-primary pb-1">Recentes</button>
+                <button className="text-gray-500">Populares</button>
+            </div>
+        </div>
         <div className="space-y-6">
         {comments.map((comment) => {
             const avatar = PlaceHolderImages.find(p => p.id === comment.avatarId);
@@ -88,9 +55,6 @@ const CommentSection = () => {
             );
         })}
         </div>
-        <p className="text-center text-sm text-gray-500 mt-8 font-semibold p-4 rounded-lg bg-gray-100">
-            Este post não recebe mais comentários!
-        </p>
     </div>
   );
 };
