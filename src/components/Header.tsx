@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Search, UserCircle, Menu } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const Header = () => {
   const navItems = [
@@ -26,11 +27,25 @@ const Header = () => {
     <header className="bg-white border-b">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
-          <div className="flex items-center lg:hidden">
-            <Menu className="h-6 w-6 text-gray-600" />
-          </div>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label="Abrir Menu" className="lg:hidden text-gray-600">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="bg-white text-gray-800 w-[280px]">
+              <nav className="flex flex-col gap-6 mt-8 text-lg p-4">
+                <a href="#" className="hover:text-primary transition-colors font-semibold">
+                  Cadastre-se
+                </a>
+                <a href="#" className="hover:text-primary transition-colors font-semibold">
+                  Login
+                </a>
+              </nav>
+            </SheetContent>
+          </Sheet>
 
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center lg:flex-none">
             <Image
               src="https://i.postimg.cc/KcBgNVxb/TDG-LOGO-FINAL-tdg-logo-principal-colorido-1-300x300.png"
               alt="TudoGostoso Logo"
@@ -44,7 +59,7 @@ const Header = () => {
             <div className="relative w-full max-w-lg">
               <Input
                 type="search"
-                placeholder="Procure uma receita, um ingrediente, um tipo de prato..."
+                placeholder="Procure uma receita, um ingrediente..."
                 className="bg-white border-2 border-orange-200 rounded-full pl-4 pr-24 h-12 w-full focus:ring-primary focus:border-primary"
               />
               <Button
@@ -56,10 +71,12 @@ const Header = () => {
             </div>
           </div>
           
-          <div className="flex items-center justify-end flex-1">
+          <div className="flex items-center justify-end flex-1 lg:flex-none">
              <div className="flex items-center">
-                <Search className="h-6 w-6 text-gray-600 lg:hidden" />
-                <UserCircle className="h-8 w-8 text-gray-400 ml-4" />
+                <Button variant="ghost" size="icon" aria-label="Search" className="lg:hidden text-gray-600">
+                    <Search className="h-6 w-6" />
+                </Button>
+                <UserCircle className="h-8 w-8 text-gray-400 ml-4 hidden lg:block" />
             </div>
           </div>
         </div>
