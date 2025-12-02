@@ -31,7 +31,7 @@ const VslPlayer = () => {
   }, []);
 
   return (
-    <div className="bg-black p-1 md:p-2 rounded-b-lg">
+    <div className="bg-card p-1 md:p-2 rounded-lg shadow-lg">
       <div className="relative aspect-video w-full">
         <div className="absolute inset-0 bg-gray-900 flex items-center justify-center rounded-md overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/natal/1280/720')] bg-cover bg-center opacity-30 blur-sm" data-ai-hint="christmas cookies"></div>
@@ -53,7 +53,7 @@ const VslPlayer = () => {
             <Gift className="w-6 h-6"/>
             QUERO ACESSAR O MÉTODO AGORA
           </Button>
-          <p className="text-center text-xs text-background/70 mt-3">Vagas limitadas. Compra 100% segura.</p>
+          <p className="text-center text-xs text-muted-foreground mt-3">Vagas limitadas. Compra 100% segura.</p>
         </div>
       )}
     </div>
