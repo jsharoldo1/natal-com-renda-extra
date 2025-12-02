@@ -17,32 +17,32 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
-      <main className="flex-1 w-full max-w-4xl container mx-auto px-4 py-8">
-        <div className="text-center mb-4">
-          <p className="font-semibold text-sm text-primary uppercase">
+      <main className="flex-1 w-full max-w-4xl container mx-auto px-4 py-6">
+        <div className="text-center mb-2">
+          <p className="font-semibold text-xs text-primary uppercase">
             RECEITAS LUCRATIVAS • ESPECIAL DE NATAL
           </p>
         </div>
-        <h1 className="font-headline text-3xl md:text-4xl font-bold text-center text-foreground leading-tight mb-4">
+        <h1 className="font-headline text-2xl md:text-4xl font-bold text-center text-foreground leading-tight mb-3">
           A Receita de "Panetone Trufado no Pote" que está fazendo donas de casa faturarem de R$ 150 a R$ 400 por dia neste fim de ano
         </h1>
-        <p className="text-center text-lg text-gray-600 mb-6">
+        <p className="text-center text-base md:text-lg text-gray-600 mb-4">
           Veja o passo a passo de como essa simples adaptação na receita tradicional virou uma febre de vendas e como você pode copiar essa técnica na sua cozinha ainda hoje.
         </p>
 
-        <div className="flex items-center justify-center gap-2 text-gray-600 mb-6">
+        <div className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 text-gray-600 mb-4 text-xs">
             <div className="flex items-center gap-1 text-yellow-500">
-                <Star className="w-5 h-5" fill="currentColor" />
-                <Star className="w-5 h-5" fill="currentColor" />
-                <Star className="w-5 h-5" fill="currentColor" />
-                <Star className="w-5 h-5" fill="currentColor" />
-                <Star className="w-5 h-5" fill="currentColor" />
+                <Star className="w-4 h-4" fill="currentColor" />
+                <Star className="w-4 h-4" fill="currentColor" />
+                <Star className="w-4 h-4" fill="currentColor" />
+                <Star className="w-4 h-4" fill="currentColor" />
+                <Star className="w-4 h-4" fill="currentColor" />
             </div>
             <span className="font-bold">4.9/5</span>
             <span>(12.403 votos)</span>
-            <span className="text-gray-400">•</span>
+            <span className="text-gray-400 hidden sm:inline">•</span>
             <div className="flex items-center gap-2">
-                <Avatar className="w-8 h-8">
+                <Avatar className="w-6 h-6">
                     <AvatarImage src={anaConfeiteiraAvatar?.imageUrl} alt="Ana Confeiteira" />
                     <AvatarFallback>AC</AvatarFallback>
                 </Avatar>
