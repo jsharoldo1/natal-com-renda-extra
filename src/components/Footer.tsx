@@ -19,7 +19,6 @@ const Footer = () => {
               <Twitter className="h-6 w-6" />
             </a>
           </div>
-          <p className="mb-2">Receitas de Natal Lucrativas</p>
           <p>&copy; {currentYear} All rights reserved</p>
         </div>
       </footer>
