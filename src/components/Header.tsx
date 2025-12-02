@@ -26,26 +26,28 @@ const Header = () => {
   return (
     <header className="bg-white border-b">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
-          <Sheet>
-            <SheetTrigger asChild>
-              <div role="button" aria-label="Abrir Menu" className="lg:hidden text-gray-600 cursor-pointer">
-                <Menu className="h-6 w-6" />
-              </div>
-            </SheetTrigger>
-            <SheetContent side="left" className="bg-white text-gray-800 w-[280px]">
-              <nav className="flex flex-col gap-6 mt-8 text-lg p-4">
-                <span className="hover:text-primary transition-colors font-semibold cursor-pointer">
-                  Cadastre-se
-                </span>
-                <span className="hover:text-primary transition-colors font-semibold cursor-pointer">
-                  Login
-                </span>
-              </nav>
-            </SheetContent>
-          </Sheet>
+        <div className="flex items-center justify-center h-24 relative lg:gap-8">
+          <div className="absolute left-4 lg:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <div role="button" aria-label="Abrir Menu" className="text-gray-600 cursor-pointer">
+                  <Menu className="h-6 w-6" />
+                </div>
+              </SheetTrigger>
+              <SheetContent side="left" className="bg-white text-gray-800 w-[280px]">
+                <nav className="flex flex-col gap-6 mt-8 text-lg p-4">
+                  <span className="hover:text-primary transition-colors font-semibold cursor-pointer">
+                    Cadastre-se
+                  </span>
+                  <span className="hover:text-primary transition-colors font-semibold cursor-pointer">
+                    Login
+                  </span>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
 
-          <div className="flex-1 flex justify-center lg:flex-none">
+          <div className="flex-shrink-0">
             <Image
               src="https://i.postimg.cc/k48zD98V/Design-sem-nome-(5).png"
               alt="TudoGostoso Logo"
@@ -55,8 +57,8 @@ const Header = () => {
             />
           </div>
 
-          <div className="hidden lg:flex flex-1 items-center justify-center">
-            <div className="relative w-full max-w-lg">
+          <div className="hidden lg:flex flex-1 items-center justify-center max-w-lg">
+            <div className="relative w-full">
               <Input
                 type="search"
                 placeholder="Procure uma receita, um ingrediente..."
@@ -70,7 +72,7 @@ const Header = () => {
             </div>
           </div>
           
-          <div className="flex items-center justify-end flex-1 lg:flex-none">
+          <div className="absolute right-4 flex items-center lg:static lg:right-auto">
              <div className="flex items-center">
                 <div role="button" aria-label="Search" className="lg:hidden text-gray-600 cursor-pointer">
                     <Search className="h-6 w-6" />
