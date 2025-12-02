@@ -42,21 +42,25 @@ const Comment = ({ author, avatarUrl, avatarHint, text, time, initialLikes }: Co
         <AvatarFallback>{getInitials(author)}</AvatarFallback>
       </Avatar>
       <div className="flex-1">
-        <div className="bg-secondary p-3 rounded-xl rounded-tl-sm">
-          <p className="font-semibold text-secondary-foreground text-sm">{author}</p>
-          <p className="text-sm text-secondary-foreground/90">{text}</p>
+        <div className="bg-gray-100 p-3 rounded-xl">
+          <p className="font-semibold text-gray-800 text-sm">{author}</p>
+          <p className="text-sm text-gray-700">{text}</p>
         </div>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground mt-1 px-2">
-          <button onClick={handleLike} className={cn("font-semibold hover:underline", liked && "text-primary")}>
-            Curtir
+        <div className="flex items-center gap-2 text-xs text-gray-500 mt-1 px-2">
+          <button onClick={handleLike} className={cn("font-semibold hover:underline", liked && "text-blue-600")}>
+            Like
           </button>
           <span>·</span>
-          <button className="font-semibold hover:underline">Responder</button>
-          <span>·</span>
-          <span>{time}</span>
+          <button className="font-semibold hover:underline">Reply</button>
           <div className="ml-auto flex items-center gap-1.5">
-            <ThumbsUp className={cn("w-4 h-4", liked ? "text-primary fill-primary/20" : "text-muted-foreground")} />
-            <span className="font-medium">{likes}</span>
+            {likes > 0 && (
+                <>
+                    <ThumbsUp className={cn("w-4 h-4", liked ? "text-blue-600" : "text-gray-500")} />
+                    <span className="font-medium">{likes}</span>
+                    <span className="mx-1">·</span>
+                </>
+            )}
+            <span>{time}</span>
           </div>
         </div>
       </div>
