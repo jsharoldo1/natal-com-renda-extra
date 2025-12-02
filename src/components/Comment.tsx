@@ -1,23 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { ThumbsUp, ThumbsDown } from "lucide-react";
+import { ThumbsUp, ThumbsDown, ChevronDown } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-type CommentProps = {
+export type CommentType = {
+  id: number;
   author: string;
-  avatarUrl: string;
-  avatarHint: string;
+  avatarId: string;
+  avatarHint?: string;
+  date: string;
   text: string;
-  time: string;
-  initialLikes: number;
+  likes: number;
+  dislikes: number;
+  replies?: CommentType[];
 };
 
-const Comment = ({ author, avatarUrl, avatarHint, text, time, initialLikes }: CommentProps) => {
+type CommentProps = {
+  comment: CommentType;
+};
+
+const Comment = ({ comment }: CommentProps) => {
   const [liked, setLiked] = useState<boolean | null>(null);
-  const [likes, setLikes] = useState(initialLikes);
-  const [dislikes, setDislikes] = useState(0);
+  const [likes, setLikes] = useState(comment.likes);
+  const [dislikes, setDislikes] = useState(comment.dislikes);
+  const [showReplies, setShowReplies] = useState(false);
 
   const handleLike = () => {
     if (liked === true) {
@@ -50,32 +58,48 @@ const Comment = ({ author, avatarUrl, avatarHint, text, time, initialLikes }: Co
     if (names.length > 1) {
       return `${names[0][0]}${names[names.length - 1][0]}`;
     }
-    return name.substring(0, 2);
+    return name.substring(0, 1);
   }
 
   return (
-    <div className="flex items-start gap-3 sm:gap-4">
-      <Avatar className="w-10 h-10 border rounded-full bg-gray-200">
-        <AvatarImage src={avatarUrl} alt={author} data-ai-hint={avatarHint} className="rounded-full" />
-        <AvatarFallback className="bg-primary/20 text-primary font-bold">{getInitials(author)}</AvatarFallback>
+    <div className="flex items-start gap-3">
+      <Avatar className="w-10 h-10 border bg-gray-200 rounded-full">
+        <AvatarImage src={comment.avatarId} alt={comment.author} data-ai-hint={comment.avatarHint} className="rounded-full" />
+        <AvatarFallback className="bg-primary/20 text-primary font-bold">{getInitials(comment.author)}</AvatarFallback>
       </Avatar>
       <div className="flex-1">
-        <div className="bg-transparent p-0">
-          <p className="font-semibold text-gray-800 text-sm">{author}</p>
-          <p className="text-sm text-gray-700 mt-1">{text}</p>
+        <div className="flex items-center gap-2">
+          <p className="font-semibold text-gray-800 text-sm">{comment.author}</p>
+          <p className="text-xs text-gray-500">{comment.date}</p>
+          <button className="text-xs text-gray-400 hover:underline">Reportar</button>
         </div>
-        <div className="flex items-center gap-2 text-xs text-gray-500 mt-2">
-           <button onClick={handleLike} className="flex items-center gap-1.5 text-gray-500 hover:text-primary">
-              <ThumbsUp className={cn("w-4 h-4", liked === true && "text-primary")} />
-              <span className="font-medium">{likes}</span>
-          </button>
-          <button onClick={handleDislike} className="flex items-center gap-1.5 text-gray-500 hover:text-red-500">
-              <ThumbsDown className={cn("w-4 h-4", liked === false && "text-red-500")} />
-              <span className="font-medium">{dislikes}</span>
-          </button>
-          <span className="mx-1">·</span>
-          <button className="font-semibold hover:underline">Responder</button>
+        <p className="text-sm text-gray-700 mt-1">{comment.text}</p>
+        <div className="flex items-center gap-4 text-xs text-gray-500 mt-2">
+           <div className="flex items-center gap-2">
+            <button onClick={handleLike} className="flex items-center gap-1.5 text-gray-500 hover:text-primary">
+                <ThumbsUp className={cn("w-4 h-4", liked === true && "text-primary")} />
+            </button>
+            <span className="font-medium text-gray-600">{likes}</span>
+            <button onClick={handleDislike} className="flex items-center gap-1.5 text-gray-500 hover:text-red-500">
+                <ThumbsDown className={cn("w-4 h-4", liked === false && "text-red-500")} />
+            </button>
+            <span className="font-medium text-gray-600">{dislikes}</span>
+           </div>
+          <button className="font-semibold text-primary hover:underline">Responder</button>
         </div>
+        {comment.replies && comment.replies.length > 0 && (
+          <div className="mt-2">
+            <button onClick={() => setShowReplies(!showReplies)} className="flex items-center gap-1 text-primary font-bold text-xs">
+              <ChevronDown className={cn("w-4 h-4 transition-transform", showReplies && "rotate-180")} />
+              <span>{showReplies ? "Ocultar resposta" : "Ver resposta"}</span>
+            </button>
+            {showReplies && (
+              <div className="mt-3 ml-4 pl-4 border-l-2">
+                {comment.replies.map(reply => <Comment key={reply.id} comment={reply} />)}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
