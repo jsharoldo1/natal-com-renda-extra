@@ -70,8 +70,8 @@ const comments = [
 
 const CommentSection = () => {
   return (
-    <div className="mt-8">
-        <div className="text-sm text-gray-600 mb-4 font-semibold">Showing 16 of 552 comments</div>
+    <div className="mt-8 bg-white p-6 rounded-lg">
+        <div className="text-sm text-gray-600 mb-4 font-semibold">Mostrando 8 de 552 comentários</div>
         <div className="space-y-6">
         {comments.map((comment) => {
             const avatar = PlaceHolderImages.find(p => p.id === comment.avatarId);
@@ -88,8 +88,8 @@ const CommentSection = () => {
             );
         })}
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-8 font-semibold p-4 rounded-lg">
-            This post no longer receives comments!
+        <p className="text-center text-sm text-gray-500 mt-8 font-semibold p-4 rounded-lg bg-gray-100">
+            Este post não recebe mais comentários!
         </p>
     </div>
   );

@@ -48,10 +48,10 @@ const Comment = ({ author, avatarUrl, avatarHint, text, time, initialLikes }: Co
         </div>
         <div className="flex items-center gap-2 text-xs text-gray-500 mt-1 px-2">
           <button onClick={handleLike} className={cn("font-semibold hover:underline", liked && "text-blue-600")}>
-            Like
+            Curtir
           </button>
           <span>·</span>
-          <button className="font-semibold hover:underline">Reply</button>
+          <button className="font-semibold hover:underline">Responder</button>
           <div className="ml-auto flex items-center gap-1.5">
             {likes > 0 && (
                 <>

@@ -11,7 +11,7 @@ export default function Home() {
   const logosImage = PlaceHolderImages.find(p => p.id === 'logos');
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1 w-full max-w-4xl container mx-auto px-4 py-8">
         <div className="text-center mb-4">
@@ -19,14 +19,14 @@ export default function Home() {
             THIS VIDEO WILL NO LONGER BE AVAILABLE IN 27:36
           </h1>
         </div>
-        <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-black leading-tight mb-4">
+        <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-foreground leading-tight mb-4">
           <span className="text-red-600">URGENT:</span> 3,000-year-old manuscript reveals King David's "Secret Chant" for Wealth that the elites don't want you to hear
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-6">
+        <p className="text-center text-lg text-gray-400 mb-6">
           Over 54,000 ordinary people have activated unexpected financial blessings in their lives with this 2-minute morning ritual
         </p>
 
-        <div className="text-center text-sm text-gray-600 mb-4">
+        <div className="text-center text-sm text-gray-400 mb-4">
           <p>By <strong>Daniel</strong> - 12/09/2025</p>
         </div>
         
