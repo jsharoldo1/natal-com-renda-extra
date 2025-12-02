@@ -23,14 +23,14 @@ export default function Home() {
             RECEITAS LUCRATIVAS • ESPECIAL DE NATAL
           </p>
         </div>
-        <h1 className="font-headline text-2xl md:text-4xl font-bold text-center text-foreground leading-tight mb-3">
+        <h1 className="font-headline text-[21px] md:text-4xl font-bold text-center text-foreground leading-tight mb-3">
           A Receita de "Panetone Trufado no Pote" que está fazendo donas de casa faturarem de R$ 150 a R$ 400 por dia neste fim de ano
         </h1>
-        <p className="text-center text-base md:text-lg text-gray-600 mb-4">
+        <p className="text-center text-base text-gray-600 mb-4">
           Veja o passo a passo de como essa simples adaptação na receita tradicional virou uma febre de vendas e como você pode copiar essa técnica na sua cozinha ainda hoje.
         </p>
 
-        <div className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 text-gray-600 mb-4 text-xs">
+        <div className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 text-gray-600 text-[11px] mb-4">
             <div className="flex items-center gap-1 text-yellow-500">
                 <Star className="w-4 h-4" fill="currentColor" />
                 <Star className="w-4 h-4" fill="currentColor" />
