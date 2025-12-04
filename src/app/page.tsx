@@ -24,10 +24,10 @@ export default function Home() {
           </p>
         </div>
         <h1 className="font-headline text-[21px] md:text-4xl font-bold text-center text-foreground leading-tight mb-3">
-          A Receita de "Panetone Trufado no Pote" que está fazendo donas de casa faturarem de R$ 150 a R$ 400 por dia neste fim de ano
+          As Receitas Que Bateram Recorde de Vendas no Natal e Estão Gerando Renda Extra de R$ 3.000, R$ 5.000 e Até R$ 7.000!
         </h1>
         <p className="text-center text-base md:text-lg text-gray-600 mb-4">
-          Veja como uma simples adaptação na receita virou febre de vendas e como começar na sua cozinha hoje.
+          Descubra quais são os doces mais procurados deste ano e como transformar sua cozinha em uma fonte de renda em menos de 30 dias.
         </p>
 
         <div className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 text-gray-600 text-[11px] mb-4">
@@ -52,18 +52,20 @@ export default function Home() {
         
         <VslPlayer />
 
-        <div className="my-6">
-            <a href="https://pay.vitalprotocol.online/checkout?product=c06ed75a-8f77-11f0-b47c-46da4690ad53&utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="w-full md:w-auto md:max-w-md mx-auto flex items-center justify-center gap-3 text-lg md:text-xl py-8 font-bold pulsing-button bg-primary hover:bg-primary/90 text-white rounded-lg shadow-lg"
-              >
-                QUERO APRENDER A FATURAR
-              </Button>
-            </a>
-          </div>
+        <div className="esconder">
+          <div className="my-6">
+              <a href="https://pay.vitalprotocol.online/checkout?product=c06ed75a-8f77-11f0-b47c-46da4690ad53&utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=" target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="w-full md:w-auto md:max-w-md mx-auto flex items-center justify-center gap-3 text-lg md:text-xl py-8 font-bold pulsing-button bg-primary hover:bg-primary/90 text-white rounded-lg shadow-lg"
+                >
+                  QUERO ACESSAR O GUIA COMPLETO
+                </Button>
+              </a>
+            </div>
 
-        <CommentSection />
+          <CommentSection />
+        </div>
       </main>
       <Footer />
     </div>
