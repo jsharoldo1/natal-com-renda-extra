@@ -32,7 +32,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
         <style>{`
-          .esconder {
+          .hide {
             display: none;
           }
         `}</style>
@@ -50,21 +50,24 @@ export default function RootLayout({
         </Script>
         <Script id="vturb-delay-script" strategy="lazyOnload">
           {`
-            var checkPlayerInterval = setInterval(function() {
-              if (typeof VTurb !== 'undefined' && document.querySelector('vturb-smartplayer') && document.querySelector('vturb-smartplayer').player) {
-                clearInterval(checkPlayerInterval);
-                var player = document.querySelector('vturb-smartplayer').player;
-                player.on('ready', function() {
-                  var delaySeconds = 120;
-                  setTimeout(function() {
-                    var elements = document.querySelectorAll('.esconder');
-                    elements.forEach(function(element) {
-                      element.style.display = 'block';
-                    });
-                  }, delaySeconds * 1000);
+            var delaySeconds = 120;
+            
+            function setupPlayer() {
+              var player = document.querySelector("vturb-smartplayer");
+              if (player && player.player) {
+                 player.addEventListener("player:ready", function() {
+                    player.displayHiddenElements(delaySeconds, [".hide"], { persist: true });
                 });
+              } else {
+                setTimeout(setupPlayer, 100);
               }
-            }, 100);
+            }
+
+            if (document.readyState === 'complete') {
+              setupPlayer();
+            } else {
+              window.addEventListener('load', setupPlayer);
+            }
           `}
         </Script>
       </body>

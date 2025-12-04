@@ -52,7 +52,7 @@ export default function Home() {
         
         <VslPlayer />
 
-        <div className="esconder my-6">
+        <div className="hide my-6">
             <a href="https://pay.vitalprotocol.online/checkout?product=c06ed75a-8f77-11f0-b47c-46da4690ad53&utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
