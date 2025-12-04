@@ -31,6 +31,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+        <style>{`.hide { display: none; }`}</style>
       </head>
       <body className={cn('font-body antialiased')}>
         {children}
@@ -41,6 +42,17 @@ export default function RootLayout({
             s.src="https://scripts.converteai.net/f3999572-e8c8-47d0-baa8-d351efd4ece8/players/6931a8e03700e0235194e3d0/v4/player.js";
             s.async=true;
             document.head.appendChild(s);
+          `}
+        </Script>
+        <Script id="delay-script" strategy="afterInteractive">
+          {`
+            var delaySeconds = 120;
+            var player = document.querySelector("vturb-smartplayer");
+            if (player) {
+              player.addEventListener("player:ready", function() {
+                player.displayHiddenElements(delaySeconds, [".hide"], { persist: true });
+              });
+            }
           `}
         </Script>
       </body>
