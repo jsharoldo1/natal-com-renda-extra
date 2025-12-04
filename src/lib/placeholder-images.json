@@ -7,44 +7,44 @@
       "imageHint": "woman confectioner"
     },
     {
-      "id": "patrícia-gomes-avatar",
-      "description": "Avatar for Patrícia Gomes",
+      "id": "cláudia-martins-avatar",
+      "description": "Avatar for Cláudia Martins",
       "imageUrl": "https://images.unsplash.com/photo-1592621385612-4d7129426394?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NDcwNjIzNXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
     },
     {
-      "id": "mariana-siqueira-avatar",
-      "description": "Avatar for Mariana Siqueira",
+      "id": "renata-soares-avatar",
+      "description": "Avatar for Renata Soares",
       "imageUrl": "https://images.unsplash.com/photo-1696960181433-68ca79ac8149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHRoaW5raW5nfGVufDB8fHx8MTc2NDY1NTMzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman thinking"
     },
     {
-      "id": "carla-viana-avatar",
-      "description": "Avatar for Carla Viana",
+      "id": "bia-confeitaria-avatar",
+      "description": "Avatar for Bia Confeitaria",
       "imageUrl": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc2NDcwNTg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman smiling"
     },
     {
-      "id": "roberto-mendes-avatar",
-      "description": "Avatar for Roberto Mendes",
-      "imageUrl": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0NjY4ODkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "man portrait"
-    },
-    {
-      "id": "fernanda-lins-avatar",
-      "description": "Avatar for Fernanda Lins",
+      "id": "juliana-paiva-avatar",
+      "description": "Avatar for Juliana Paiva",
       "imageUrl": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGFwcHklMjB3b21hbnxlbnwwfHx8fDE3NjQ3MTAwNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy woman"
     },
     {
-      "id": "jéssica-m-avatar",
-      "description": "Avatar for Jéssica M.",
+      "id": "marcos-paulo-avatar",
+      "description": "Avatar for Marcos Paulo",
+      "imageUrl": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0NjY4ODkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "silvana-gomes-avatar",
+      "description": "Avatar for Silvana Gomes",
       "imageUrl": "https://images.unsplash.com/photo-1729774091842-8b8597c4ec38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMGtpdGNoZW58ZW58MHx8fHwxNzY0NzEwMDUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman kitchen"
     },
     {
-      "id": "luiza-costa-avatar",
-      "description": "Avatar for Luiza Costa",
+      "id": "lúcia-ferraz-avatar",
+      "description": "Avatar for Lúcia Ferraz",
       "imageUrl": "https://images.unsplash.com/photo-1621903570450-b6750dce9350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8eW91bmclMjB3b21hbnxlbnwwfHx8fDE3NjQ3MTAwNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "young woman"
     },

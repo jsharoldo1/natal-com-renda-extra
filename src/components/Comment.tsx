@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ThumbsUp, ThumbsDown, ChevronDown } from "lucide-react";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
@@ -87,8 +87,29 @@ const Comment = ({ comment }: CommentProps) => {
           <button className="font-semibold text-primary hover:underline">Responder</button>
         </div>
         {comment.replies && comment.replies.length > 0 && (
-          <div className="mt-3 ml-4 pl-4 border-l-2">
-            {comment.replies.map(reply => <Comment key={reply.id} comment={reply} />)}
+          <div className="mt-4">
+            {comment.replies.map(reply => (
+               <div key={reply.id} className="flex items-start gap-3 pl-4 border-l-2 ml-4 pt-4">
+                 <Avatar className="w-10 h-10 border bg-gray-200 rounded-full">
+                   <AvatarImage src={reply.avatarId} alt={reply.author} data-ai-hint={reply.avatarHint} className="rounded-full" />
+                   <AvatarFallback className="bg-primary/20 text-primary font-bold">{getInitials(reply.author)}</AvatarFallback>
+                 </Avatar>
+                 <div className="flex-1">
+                   <div className="flex items-center gap-2">
+                     <p className="font-semibold text-gray-800 text-sm">{reply.author}</p>
+                     <p className="text-xs text-gray-500">{reply.date}</p>
+                     <button className="text-xs text-gray-400 hover:underline">Reportar</button>
+                   </div>
+                   <p className="text-sm text-gray-700 mt-1">{reply.text}</p>
+                   <div className="flex items-center gap-2 text-xs text-gray-500 mt-2">
+                       <button className="flex items-center gap-1.5 text-gray-500 hover:text-primary">
+                           <ThumbsUp className="w-4 h-4" />
+                       </button>
+                       <span className="font-medium text-gray-600">{reply.likes}</span>
+                   </div>
+                 </div>
+               </div>
+            ))}
           </div>
         )}
       </div>

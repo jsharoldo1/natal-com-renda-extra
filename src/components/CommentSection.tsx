@@ -4,86 +4,60 @@ import Comment, { CommentType } from "./Comment";
 const commentsData: Omit<CommentType, 'avatarId' | 'avatarHint'>[] = [
   {
     id: 1,
-    author: "Patrícia Gomes",
+    author: "Cláudia Martins",
     date: "02/12/2025",
-    text: "Gente, estou chocada com o resultado! Fiz ontem a noite só pra testar e levei hoje pro trabalho. Vendi TUDO em 20 minutos. A massa fica super úmida, não tem nada a ver com aqueles secos de mercado. Podem fazer sem medo!",
-    likes: 12,
+    text: "Meninas, podem comprar sem medo! Eu sempre tive prejuízo porque não sabia cobrar. Só as tabelas de precificação que vêm no Guia já salvaram meu Natal. Já estou com R$ 2.800 de encomendas só pra semana que vem segui o passo a passo certinho.",
+    likes: 42,
     dislikes: 0,
   },
   {
     id: 2,
-    author: "Mariana Siqueira",
+    author: "Renata Soares",
     date: "01/12/2025",
-    text: "Alguém sabe me dizer se essa receita rende bem mesmo? Estou com pouco dinheiro pra investir nos ingredientes e queria saber se vale a pena.",
-    likes: 2,
+    text: "Alguém sabe se serve pra quem nunca fez doce pra vender? Sou totalmente iniciante.",
+    likes: 5,
     dislikes: 0,
     replies: [
       {
         id: 101,
-        author: "Carla Viana",
+        author: "Bia Confeitaria",
         date: "01/12/2025",
-        text: "Mariana, pode fazer! Eu gastei uns 60 reais de material e fiz quase 250 em vendas. O segredo é a embalagem econômica que ele ensina no vídeo. Rende muito!",
-        likes: 8,
+        text: "Renata, serve sim! O guia ensina do zero. Comecei semana passada fazendo os Bombomtones que ela ensina no vídeo e já vendi 30 unidades aqui no condomínio. É muito fácil.",
+        likes: 18,
         dislikes: 0,
       },
     ],
   },
   {
     id: 3,
-    author: "Roberto Mendes",
+    author: "Juliana Paiva",
     date: "30/11/2025",
-    text: "Receita perfeita. Segui o passo a passo do vídeo e não tem erro. Uma dica pra quem vai fazer: usem o chocolate meio amargo na cobertura como ele fala, fica muito mais chique e não fica enjoativo. Sucesso total aqui em SP.",
-    likes: 15,
+    text: "Gente, eu estava desconfiada com esse negócio de faturar 5 mil, mas o método funciona mesmo. O segredo está nas Taças Recheadas que o guia ensina, a margem de lucro é absurda! Obrigada por compartilhar esse material.",
+    likes: 27,
     dislikes: 0,
   },
   {
     id: 4,
-    author: "Fernanda Lins",
+    author: "Marcos Paulo",
     date: "29/11/2025",
-    text: "Maravilhoso!!! Meu marido estava desempregado e começamos a fazer juntos semana passada. Já temos encomenda até pro Ano Novo. Agradeço demais por ter encontrado esse vídeo.",
-    likes: 34,
+    text: "Comprei para minha esposa e estamos trabalhando juntos. A planilha de custos ajuda demais, a gente sabe exatamente quanto vai ganhar em cada venda. Já tiramos o valor do guia no primeiro dia de vendas.",
+    likes: 15,
     dislikes: 0,
   },
   {
     id: 5,
-    author: "Jéssica M.",
+    author: "Silvana Gomes",
     date: "28/11/2025",
-    text: "Eu sempre achava que panetone era difícil de fazer, que precisava daquela essência forte... mas essa técnica natural muda tudo. O cheiro invadiu a casa da vizinha e ela veio comprar kkkk amei!",
-    likes: 5,
+    text: "Só uma palavra: GRATIDÃO! Esse Natal com Renda Extra mudou meu fim de ano. As receitas são econômicas mesmo e vendem rápido. Fiz os biscoitos decorados e não sobrou um pra contar história kkkk",
+    likes: 9,
     dislikes: 0,
   },
   {
     id: 6,
-    author: "Luiza Costa",
+    author: "Lúcia Ferraz",
     date: "28/11/2025",
-    text: "Fiz a versão no pote e ficou divino.",
-    likes: 1,
-    dislikes: 0,
-  },
-  {
-    id: 7,
-    author: "Sueli Antunes",
-    date: "27/11/2025",
-    text: "Meninas, uma dúvida... quanto tempo dura fora da geladeira? Quero vender na feira domingo.",
-    likes: 0,
-    dislikes: 0,
-    replies: [
-      {
-        id: 102,
-        author: "Ana Confeiteira",
-        date: "27/11/2025",
-        text: "Sueli, no vídeo ele explica sobre os conservantes naturais. O meu durou 5 dias super fofinho fora da geladeira, mas vendi tudo antes disso rsrs.",
-        likes: 4,
-        dislikes: 0,
-      },
-    ],
-  },
-  {
-    id: 8,
-    author: "Douglas Ferreira",
-    date: "25/11/2025",
-    text: "Melhor investimento que fiz. O pulo do gato é a calda que ele ensina pra molhar a massa, fica igualzinho aqueles de padaria cara. Recomendo.",
-    likes: 9,
+    text: "Achei muito prático. Eu não tinha tempo de ficar calculando preço, e no guia já vem o preço sugerido. Foi só copiar e anunciar no Instagram. Recomendo!",
+    likes: 11,
     dislikes: 0,
   },
 ];
@@ -108,9 +82,9 @@ const comments = mapComments(commentsData);
 const CommentSection = () => {
   return (
     <div className="mt-12 border-t pt-8">
-        <h2 className="text-xl font-bold mb-4">Comentários</h2>
+        <h2 className="text-xl font-bold mb-4">Comentários mais relevantes</h2>
         <div className="flex justify-between items-center mb-6 border-b pb-2">
-            <p className="text-gray-600 text-sm">213 comentários</p>
+            <p className="text-gray-600 text-sm">Mostrando 6 de 213 comentários</p>
             <div className="flex gap-4 text-sm">
                 <button className="font-bold text-primary border-b-2 border-primary pb-1">Recentes</button>
                 <button className="text-gray-500">Populares</button>
