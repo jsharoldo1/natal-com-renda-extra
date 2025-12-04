@@ -48,22 +48,23 @@ export default function RootLayout({
             document.head.appendChild(s);
           `}
         </Script>
-        <Script id="vturb-delay-script" strategy="afterInteractive">
+        <Script id="vturb-delay-script" strategy="lazyOnload">
           {`
-            document.addEventListener('DOMContentLoaded', function() {
-              var checkPlayerInterval = setInterval(function() {
-                var player = document.querySelector("vturb-smartplayer");
-                if (player) {
-                  clearInterval(checkPlayerInterval);
-                  player.addEventListener("player:ready", function() {
-                    var delaySeconds = 120;
-                    player.displayHiddenElements(delaySeconds, [".esconder"], {
-                      persist: true
+            var checkPlayerInterval = setInterval(function() {
+              if (typeof VTurb !== 'undefined' && document.querySelector('vturb-smartplayer').player) {
+                clearInterval(checkPlayerInterval);
+                var player = document.querySelector('vturb-smartplayer').player;
+                player.on('ready', function() {
+                  var delaySeconds = 120;
+                  setTimeout(function() {
+                    var elements = document.querySelectorAll('.esconder');
+                    elements.forEach(function(element) {
+                      element.style.display = 'block';
                     });
-                  });
-                }
-              }, 100);
-            });
+                  }, delaySeconds * 1000);
+                });
+              }
+            }, 100);
           `}
         </Script>
       </body>
