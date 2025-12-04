@@ -51,7 +51,7 @@ export default function RootLayout({
         <Script id="vturb-delay-script" strategy="lazyOnload">
           {`
             var checkPlayerInterval = setInterval(function() {
-              if (typeof VTurb !== 'undefined' && document.querySelector('vturb-smartplayer').player) {
+              if (typeof VTurb !== 'undefined' && document.querySelector('vturb-smartplayer') && document.querySelector('vturb-smartplayer').player) {
                 clearInterval(checkPlayerInterval);
                 var player = document.querySelector('vturb-smartplayer').player;
                 player.on('ready', function() {
