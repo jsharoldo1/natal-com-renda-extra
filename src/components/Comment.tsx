@@ -25,7 +25,6 @@ const Comment = ({ comment }: CommentProps) => {
   const [liked, setLiked] = useState<boolean | null>(null);
   const [likes, setLikes] = useState(comment.likes);
   const [dislikes, setDislikes] = useState(comment.dislikes);
-  const [showReplies, setShowReplies] = useState(false);
 
   const handleLike = () => {
     if (liked === true) {
@@ -88,16 +87,8 @@ const Comment = ({ comment }: CommentProps) => {
           <button className="font-semibold text-primary hover:underline">Responder</button>
         </div>
         {comment.replies && comment.replies.length > 0 && (
-          <div className="mt-2">
-            <button onClick={() => setShowReplies(!showReplies)} className="flex items-center gap-1 text-primary font-bold text-xs">
-              <ChevronDown className={cn("w-4 h-4 transition-transform", showReplies && "rotate-180")} />
-              <span>{showReplies ? "Ocultar resposta" : "Ver resposta"}</span>
-            </button>
-            {showReplies && (
-              <div className="mt-3 ml-4 pl-4 border-l-2">
-                {comment.replies.map(reply => <Comment key={reply.id} comment={reply} />)}
-              </div>
-            )}
+          <div className="mt-3 ml-4 pl-4 border-l-2">
+            {comment.replies.map(reply => <Comment key={reply.id} comment={reply} />)}
           </div>
         )}
       </div>
