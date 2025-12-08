@@ -20,9 +20,9 @@ export default function RootLayout({
         <Script id="player-optimizer" strategy="beforeInteractive">
           {`!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);`}
         </Script>
-        <link rel="preload" href="https://scripts.converteai.net/f3999572-e8c8-47d0-baa8-d351efd4ece8/players/6931a8e03700e0235194e3d0/v4/player.js" as="script" />
+        <link rel="preload" href="https://scripts.converteai.net/f3999572-e8c8-47d0-baa8-d351efd4ece8/players/6931f267c5a3364c781260da/v4/player.js" as="script" />
         <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script" />
-        <link rel="preload" href="https://cdn.converteai.net/f3999572-e8c8-47d0-baa8-d351efd4ece8/6931a8be3700e0235194e397/main.m3u8" as="fetch" />
+        <link rel="preload" href="https://cdn.converteai.net/f3999572-e8c8-47d0-baa8-d351efd4ece8/6931f2343700e023519547bb/main.m3u8" as="fetch" />
         <link rel="dns-prefetch" href="https://cdn.converteai.net" />
         <link rel="dns-prefetch" href="https://scripts.converteai.net" />
         <link rel="dns-prefetch" href="https://images.converteai.net" />
@@ -39,20 +39,23 @@ export default function RootLayout({
         <Script id="vturb-player-script" strategy="afterInteractive">
           {`
             var s=document.createElement("script");
-            s.src="https://scripts.converteai.net/f3999572-e8c8-47d0-baa8-d351efd4ece8/players/6931a8e03700e0235194e3d0/v4/player.js";
+            s.src="https://scripts.converteai.net/f3999572-e8c8-47d0-baa8-d351efd4ece8/players/6931f267c5a3364c781260da/v4/player.js";
             s.async=true;
             document.head.appendChild(s);
           `}
         </Script>
         <Script id="delay-script" strategy="afterInteractive">
           {`
-            var delaySeconds = 120;
-            var player = document.querySelector("vturb-smartplayer");
-            if (player) {
-              player.addEventListener("player:ready", function() {
-                player.displayHiddenElements(delaySeconds, [".hide"], { persist: true });
-              });
-            }
+            var delaySeconds = 40;
+            var interval = setInterval(function() {
+              var player = document.querySelector("vturb-smartplayer");
+              if (player) {
+                player.addEventListener("player:ready", function() {
+                  player.displayHiddenElements(delaySeconds, [".hide"], { persist: true });
+                });
+                clearInterval(interval);
+              }
+            }, 100);
           `}
         </Script>
       </body>
